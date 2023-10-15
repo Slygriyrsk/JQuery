@@ -1,0 +1,31 @@
+.but {
+  background-color: rgb(68, 159, 234);
+  color: white;
+  border-radius: 1px;
+  border: 2px solid white;
+  box-shadow: none;
+  width: 60px;
+  height: 30px;
+  margin-left: 800px;
+}
+
+.but:hover {
+  cursor: pointer;
+  background-color: rgb(9, 9, 236);
+}
+
+h1 {
+  text-align: center;
+}
+
+.text-field {
+  display: grid;
+  grid: repeat(2, 60px) / auto-flow 80px;
+  width: 500px;
+  height: 200px;
+  margin-left: 350px;
+}
+
+.text-field #textField {
+  text-align: left;
+}
