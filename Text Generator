@@ -1,0 +1,127 @@
+This file contains the text generator web interface with which you can generate random text by clicking on the button
+
+code is :
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("./images/new1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            animation: backgroundAnimation 10s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: center;
+            }
+
+            25% {
+                background-position: top right;
+            }
+
+            50% {
+                background-position: bottom left;
+            }
+
+            75% {
+                background-position: top left;
+            }
+
+            100% {
+                background-position: center;
+            }
+        }
+
+        .top-container {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .but {
+            border: 2px solid rgb(65, 2, 7);
+            border-radius: 10px;
+            background-color: rgb(48, 131, 225);
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .but:hover {
+            background-color: blue;
+        }
+
+        .custom-box {
+            width: 500px;
+            height: 200px;
+            border: 2px solid rgb(68, 2, 250);
+            box-shadow: 5px 5px 15px 10px rgb(14, 3, 225);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: boxAnimation 4s ease infinite;
+        }
+
+        @keyframes boxAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-container">
+        <button class="but">GENERATE TEXT</button>
+    </div>
+    <div class="custom-box">"Success means doing the best with what we have. Success is the doing,
+        not the getting; in the trying, not the triumph. Success is a personal standard, reaching for the highest that
+        is in us, becoming all that we can be." — Zig Ziglar
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        var sentences = [
+            "In a moment of decision, the best thing you can do is the right thing to do, the next best thing is the wrong thing, and the worst thing you can do is nothing. — Theodore Roosevelt",
+            "Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength. — Arnold Schwarzenegger",
+            "It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood ... who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat. — Theodore Roosevelt.",
+        ];
+
+        $(document).ready(function () {
+            $(".but").click(function () {
+                /* basically count is for the random index to get from the array of the sentences to get start with*/
+                var count = Math.floor(Math.random() * sentences.length);
+                $(".custom-box").text(sentences[count]);
+            });
+        });
+    </script>
+</body>
+
+</html>
